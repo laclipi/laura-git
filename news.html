@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        const data = [
+          {
+            author: "Joel Khalili",
+            title: "For Bitcoin Mines in Texas, the Honeymoon Is Over",
+            description:
+              "The energy demands of bitcoin mining have sparked controversy in a state that once welcomed those companies with open arms.",
+            url: "https://www.wired.com/story/bitcoin-mining-texas-energy-grid/",
+            urlToImage:
+              "https://media.wired.com/photos/65e7993a4d9f150f523145f2/191:100/w_1280,c_limit/Texas-Bitcoin-Mining-Business-1235927077.jpg",
+            publishedAt: "2024-03-06T13:44:40Z",
+            content:
+              "Others argue the states strategy of paying Bitcoin miners not to mine when the grid is under heavy load is nonsensical. The most important thing a regulator can do is match assets and liabilitiesmatc… [+3122 chars]",
+          },
+          {
+            author: "coinpedia.org",
+            title: "Top 5 Crypto To Buy Now Before They Skyrocket",
+            description:
+              "The post Top 5 Crypto To Buy Now Before They Skyrocket appeared first on Coinpedia Fintech News The recent crypto market slowdown has not deterred the strong rally experienced by Bitcoin, manifesting in prices above the $62,000 mark. Despite this pause, the r…",
+            url: "https://biztoc.com/x/49ebad77d3b27f0e",
+            urlToImage: "https://c.biztoc.com/p/49ebad77d3b27f0e/s.webp",
+            publishedAt: "2024-03-06T13:40:12Z",
+            content:
+              "The post Top 5 Crypto To Buy Now Before They Skyrocket appeared first on Coinpedia Fintech NewsThe recent crypto market slowdown has not deterred the strong rally experienced by Bitcoin, manifesting … [+287 chars]",
+          },
+          {
+            author:
+              "JJ Kinahan, Senior Contributor,  JJ Kinahan, Senior Contributor https://www.forbes.com/sites/jjkinahan/",
+            title: "Bonds And Gold Rally. Should Investors Be Concerned?",
+            description:
+              "Initially, hackers claimed responsibility for the outages but that was later denied by company insiders.",
+            url: "https://www.forbes.com/sites/jjkinahan/2024/03/06/bonds-and-gold-rally-should-investors-be-concerned/",
+            urlToImage:
+              "https://imageio.forbes.com/specials-images/imageserve/65e86d3bdeb7117f0b101abc/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds",
+            publishedAt: "2024-03-06T13:39:36Z",
+            content:
+              "Bitcoin hit a new intraday high on Tuesday. (Photo by Dan Kitwood/Getty Images) Getty Images Key Takeaways<ul><li>Magnificent Seven Stocks Weaken</li><li>Bitcoin Hits A New High</li><li>Jerome Po… [+3091 chars]",
+          },
+          {
+            author: "MarketBeat News",
+            title:
+              "Quadrature Capital Ltd Makes New Investment in Bit Digital, Inc. (NASDAQ:BTBT)",
+            description:
+              "Quadrature Capital Ltd bought a new position in shares of Bit Digital, Inc. (NASDAQ:BTBT – Free Report) during the 3rd quarter, according to the company in its most recent 13F filing with the Securities & Exchange Commission. The institutional investor bought…",
+            url: "https://www.etfdailynews.com/2024/03/06/quadrature-capital-ltd-makes-new-investment-in-bit-digital-inc-nasdaqbtbt/",
+            urlToImage:
+              "https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/bit-digital-inc-logo-1200x675.png?v=20210802101333&w=240&h=240&zc=2",
+            publishedAt: "2024-03-06T13:38:53Z",
+            content:
+              "Quadrature Capital Ltd bought a new position in shares of Bit Digital, Inc. (NASDAQ:BTBT – Free Report) during the 3rd quarter, according to the company in its most recent 13F filing with the Securit… [+3126 chars]",
+          },
+        ];
+        $.each(data, function (i, noticia) {
+          $("#container").append(`
+
+        <div class="noticia">
+          <img class="imgnew" src="${noticia.urlToImage}"/>
+            <h2>${noticia.title}</h2>
+            <p>${noticia.description}</p>
+            <p>${noticia.content}</p>
+            <p><strong>Autor:</strong> ${noticia.author}</p>
+            <a href=${noticia.url}>Ver Noticia</a>
+        </div>
+
+            `);
+        });
+      });
+    </script>
+    <style>
+      /*    -------   Estilo menu ----------- */
+      @import url("https://fonts.googleapis.com/css?family=Oswald:500");
+
+      .back {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 130px;
+        background: url(https://pp.userapi.com/c841122/v841122831/327e/nHt-92F6yc4.jpg)
+          no-repeat top center #efeff1;
+        background-size: cover;
+      }
+
+      nav {
+        width: 100%;
+        position: fixed;
+        top: 50px;
+        text-align: center;
+      }
+
+      nav a {
+        font-family: "Oswald", sans-serif;
+        font-weight: 500;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #16151b;
+        margin: 0 15px;
+        font-size: 16px;
+        letter-spacing: 1px;
+        position: relative;
+        display: inline-block;
+      }
+
+      nav a:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: #16151b;
+        top: 47%;
+        animation: out 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+      }
+
+      nav a:hover:before {
+        animation: in 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+      }
+
+      @keyframes in {
+        0% {
+          width: 0;
+          left: 0;
+          right: auto;
+        }
+
+        100% {
+          left: 0;
+          right: auto;
+          width: 100%;
+        }
+      }
+
+      @keyframes out {
+        0% {
+          width: 100%;
+          left: auto;
+          right: 0;
+        }
+
+        100% {
+          width: 0;
+          left: auto;
+          right: 0;
+        }
+      }
+
+      @keyframes show {
+        0% {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @for $i from 1 through 5 {
+        nav a:nth-child(#{$i}) {
+          animation: show 0.2s #{$i * 0.1+1}s ease 1 both;
+        }
+      }
+
+      /* --------- NEWS --------- */
+
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 150px;
+      }
+
+      main {
+        font-family: Arial, sans-serif;
+
+        background-color: #f9f9f9;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 10 auto;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .noticia {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 20px;
+        background-color: #fff;
+      }
+
+      .noticia h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .noticia p {
+        font-size: 14px;
+        color: #555;
+      }
+      .imgnew {
+        width: 250px;
+        height: 250px;
+        object-fit: contain;
+      }
+    </style>
+    <title>News</title>
+  </head>
+
+  <body>
+    <! -- /* MENU */ -->
+    <div class="back"></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="serveis.html">Serveis</a>
+      <a href="sectors.html">Sectors</a>
+      <a href="facilities.html">Facilities</a>
+      <a href="clients.html">Clients</a>
+      <a href="privacitat.html">Privacitat</a>
+      <a href="detallServei.html">DetallServei</a>
+      <a href="">Otro+</a>
+      <a href="Preus.html">Preus</a>
+      <a href="">News</a>
+      <a href="quisom.html">Qui som</a>
+      <a href="contacte.html">Contacte</a>
+    </nav>
+    <main>
+      <div id="container" class="container">
+        <h1>Últimas Noticias</h1>
+      </div>
+    </main>
+  </body>
+</html>
